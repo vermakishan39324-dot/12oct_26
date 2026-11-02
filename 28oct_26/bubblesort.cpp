@@ -1,12 +1,23 @@
-include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
-    int arr[]={3,4,6,4,2};
-    int n=5;
-    for (int i=0; i< n-1; i++){
-        for (int j= 0; j< n-i-1; j++){
+
+int main() {
+    int a[5] = {5, 3, 8, 1, 2};
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4 - i; j++) {
+            if (a[j] > a[j + 1]) {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
         }
-        cout<< "sorted array: ";
-        for (int i=0)
-        }
-    } 
+    }
+
+    cout << "Sorted array: ";
+    for (int i = 0; i < 5; i++) {
+        cout << a[i] << " ";
+    }
+
+    return 0;
+}
